@@ -1,0 +1,24 @@
+<div class="tw-h-screen tw-bg-gray-100 dark:tw-bg-gray-900 dark:tw-text-white tw-flex tw-flex-col">
+  <header class="tw-bg-[#DD0031] dark:tw-bg-[#C3002F] tw-p-2 2xl:tw-px-8 tw-flex tw-text-white tw-justify-between">
+    <div class="tw-flex tw-space-x-2">
+      <fa-icon [icon]="['fab', 'angular']" class="tw-text-[30px]"/>
+      <span class="tw-my-auto">{{title}}</span>
+    </div>
+    <div class="tw-my-auto">
+      <button (click)="toggleDarkTheme(!(localStorage.getItem('darkMode') == 'true'))" class="tw-rounded-full tw-w-10 tw-h-10 tw-bg-gray-100 tw-text-black dark:tw-bg-gray-900 dark:tw-text-white tw-p-2">
+        <fa-icon [icon]="['fas', localStorage.getItem('darkMode') == 'true' ? 'moon' : 'sun']"/>
+      </button>
+    </div>
+  </header>
+
+  <main class="tw-flex-1 tw-mx-2 tw-mt-2 lg:tw-mt-4 xl:tw-mx-8 2xl:tw-w-[1900px] 2xl:tw-mx-auto">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="tw-text-gray-400 dark:tw-text-gray-600">
+    <div class="2xl:tw-max-w-[1900px] tw-px-2 lg:tw-mx-4 lg:tw-px-0 xl:tw-mx-8 2xl:tw-mx-auto tw-py-2 tw-mt-2 tw-flex tw-border-t tw-border-gray-400 dark:tw-border-gray-600">
+      <fa-icon [icon]="['far', 'copyright']" class="tw-mr-1"/>
+      <span class="tw-my-auto">{{currentYear}} Zspratt21</span>
+    </div>
+  </footer>
+</div>
